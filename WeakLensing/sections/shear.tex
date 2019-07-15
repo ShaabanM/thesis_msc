@@ -1,0 +1,54 @@
+The weak lensing analysis process can be conceptually split into two parts; 1) converting images to catalogs of galaxy shapes and 2) extracting scientific results from shape catalogs. In this section we present a sample image to catalog pipeline. An overview of a weaklensing analysis pipeline is presented in \autoref{fig:pipe}.
+
+\begin{figure}
+    \begin{small}
+        \begin{center}
+            \includegraphics[width=0.95\textwidth]{WeakLensing/figs/pipe.jpg}
+        \end{center}
+        \caption{A generic outline of weak lensing pipeline analysis as presented in \cite{rachel_2018}.}
+        \label{fig:pipe}
+    \end{small}
+\end{figure}
+
+
+\subsubsection{Object Detection}
+
+The first step in weak lensing analysis is to detect the objects that will be analyzed. In the case of cosmological data the objects of interest are faint distant galaxies. Traditional methods for galaxy detection simply involve the detection of peaks above some detection threshold in a long exposure image. However due to the subtlety of the weak lensing signal the process is more involved. First we must confidently distinguish stars from galaxies, this is a fairly straight forward process that is usually done with photometric data. The next step is to detect galaxies that have blended together in the imaging process, i.e. detections with a double peak feature. Such blended images account for upto 10\% of detections and therefore need to be either deblended or discarded from the data set \cite{rachel_2018,general_2013}. Finally, based on the systematics of the detector some selection criteria is introduced that will filter out problematic images. 
+
+\par Alternatively, another way galaxies are detected in images is by a likelihood analysis comparing imaged brightness profiles $I$ to theoretical brightness profiles predicted by galactic theories.
+
+\subsubsection{Shape Extraction}
+After the galaxies are detected their shapes need to be measured. The accurate measurement of galaxy shape from an image is a rich and complex topic, we will state some results from \cite{massey_2013,general_2013} without derivation. Galaxy shapes can be quantified by computing the second moments of the galaxy images 
+
+\begin{equation}
+    Q_{ij} = \frac{\int  d^2x I(\vec{x}) W(\vec{x})x_ix_j}{\int d^2x I(\vec{x}) W(\vec{x}) }
+    \label{eq:moments}
+\end{equation}
+
+
+were $I$ is the brightness profile defined in \autoref{eq:linearizedbright} and $W$ is a weighting function introduced to effectively limit the domain of the integral. The exact relationship between the the second moments and ellipticity is convention dependant, in this section we will use the same definitions as \cite{rachel_2018,Hoekstra:2013gua}. The size $R$ and complex ellipticity $\epsilon$ are given by
+
+\begin{equation}
+    R^2 = Q_{11} + Q_{22}
+    \label{eq:size}
+\end{equation}
+
+\begin{equation}
+    \epsilon = \frac{Q_{11}-Q_{22}+2iQ_{12}}{Q_{11}+Q_{22}}
+    \label{eq:ellipticity}
+\end{equation}
+
+All ellipticity definitions have a well-defined response to a lensing shear and, hence, recover the same science after averaging across ensembles of galaxies. \autoref{eq:ellip} tells us that averaging over a randomly oriented galaxies gives us the mean shear ($\left< \epsilon \right > = \left< \epsilon_{orig}\right> + \left<\gamma \right> = \left<\gamma \right>$) and therefore an accurate measurement of $\epsilon$ suffices for statistical analysis. 
+
+\par Note that if the alternative object detection method is used, i.e. model fitting, then the ellipticity can be simply read off the best fit model without the need for computing second moments.
+
+\subsubsection{Point Spread Function}
+The point spread function (PSF) describes the response of an imaging system to a point source or point object. In practice the surface brightness profile of an object in an image is not the $I_{obs}$ from \autoref{eq:linearizedbright} but is convoloved with some unknown function $PSF(\vec{x})$. Therefore, in order to detect weak lensing signal we must understand and reconstruct our PSF in order to deconvolve it from the image. Deconvolving the PSF is the most important and most difficult step of any weak lensing analysis \cite{Hoekstra:2013gua,rachel_2018}. The PSF has a width which leads to rounder images and typically is anisotropic, which leads to a preferred orientation. The bias is grouped into two kinds: a multiplicative bias $m$ that scales the shear, and an additive bias $c$ that reflects preferred orientations that are introduced. The observed shear and true shear are thus related by
+
+\begin{equation}
+    \gamma_{obs} = (1+m) \gamma + c
+     \label{eq:shearobs}
+\end{equation}
+
+In order to take this effect the PSF must be accurately estimated and deconvolved from the results. This is done by observing a large field of stars and recording the optical systems response to a star as a function of position. The function is then estimated by interpolating between star positions.
+

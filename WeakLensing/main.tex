@@ -1,0 +1,32 @@
+\chapter{Weak Lensing}
+\section{Introduction}
+\input{WeakLensing/sections/intro.tex}
+
+\section{Background Theory}
+\input{WeakLensing/sections/theory.tex}
+% Cosmology standard model and lensing formalism
+% begin{enumerate}
+%     \item Current observations imply w=-1 however that is no constraint on its evolution
+%     \item The inital fluctation ins matter density produced by random quantum events therefore CLT tells us that is a gaussiam random field therefore power spectrum is enough to get all statistics
+% \end{enumerate}
+
+
+\section{Measuring Shear (Images to Catalogs)}
+\input{WeakLensing/sections/shear.tex}
+
+\section{Catalogs to Science}
+\input{WeakLensing/sections/science.tex}
+
+\section{Weak Lensing Results}
+Some weak lensing results are already available from collocations such as DES and Subaru. These results include measurements of the power spectrum, contour constraint plots of $\Omega_m$ and $\sigma_8$, and tomogrophic data of the powers pectrum as a function of redshift. The results can be found in \cite{Subaru_2019}.
+
+\section{Systematics}
+Finally, we end this report with a discussion with a topic almost synonymous with weak lensing, systematic errors. Weak lensing has proven the most technically challenging cosmological probe due to the large range of systematic errors it suffers from \cite{general_2013}. Below We present a very brief overview over the rich topic of weak lensing systematics, for more details please see \cite{massey_2013,general_2013}.
+
+\begin{enumerate}
+    \item \textbf{PSF Errors:} As mentioned previously the PSF of the optical system needs to be estimated in order to extract meaningful data. This estimation involved interpolation between the systems response to a star, this interpolation is a less accurate representation of the PSF the further we get from a star. This uncertainty in the PSF could result in systematically introducing additional shear in a subset of the data and therefore detecting false signals. 
+    \item \textbf{Blending:} As discussed previously approximately 10\% of the galaxies observed have some form of blending. This introduces the following problem; we can be over aggressive with our blended object identification which could result in non blended objects being flagged as blended and unnecessarily tampered with or conversely we could be too lenient with our detection allowing blended objects into our analysis. Both cases would introduce a systematic error into our data. Additionally, even if our detection algorithm is perfect our deblending algorithm might not be which would induce a systematic in 10\% of the data.
+    \item \textbf{Selection Bias:} Depending on the optical system used to detect the galaxies an algorithm is needed to filter out unusable objects. The reason an object is unusable could stem from PSF uncertainty, blending, detector systematics or any other reason. Imperfections in such algorithms could result in an implicit shape dependance on the selection, such a dependance introduces/removes shear signal from the data.
+    \item \textbf{Intrinsic Alignment:} Finally, throughout this entire the report the fundamental assumption as been that galaxy orientations are randomly distributed. This assumption is not entirely true, factors such as proximity to other galaxies, angular momentum during formation, and location relative to the center of mass of a cluster all impact the alignment of galaxies. A good example of this is the fact that galaxies near the center of a cluster tend to be oriented in a manner such that they point towards the center\cite{rachel_2018}.
+\end{enumerate}
+

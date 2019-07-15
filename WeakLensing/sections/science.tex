@@ -1,0 +1,62 @@
+After we have measured galaxy shapes to the necessary accuracy we need to extract cosmological results from the data. More specifically we want to be able to extract the density contrast power spectrum discussed in the Section 2. 
+
+\subsection{Convergence Power Spectrum}
+We first note that in the weak limit we can use the 3D newtonian comoving poisson equation
+
+\begin{equation}
+    \nabla^2 \phi = \frac{3H_0 ^2\Omega_m }{2a} \delta
+    \label{eq:poisson}
+\end{equation}
+
+were $\delta$ is the density contrast defined in \autoref{eq:densitycontrast}. Therefore, we can rewrite the convergence as
+
+\begin{equation}
+    \kappa = \frac{3H_0^2}{2c^2} \Omega_m \int_{0}^{\chi_s} d\chi  \frac{\chi (\chi_s-\chi)}{\chi_s} \frac{\delta(\chi)}{a}
+    \label{eq:kappadelt}
+\end{equation}
+
+were $\chi$ is the comoving angular diameter distance and $a$ is the scale factor. \autoref{eq:kappadelt} shows that the convergence is a projection of the density contrast with the weight function 
+
+\begin{equation}
+    w(\chi) = \frac{3H_0^2 \Omega_m \chi (\chi - \chi_s)}{2 c^2 \chi_s a}
+    \label{eq:weight}
+\end{equation}
+
+thus, the convergence power spectrum is determined by the integral over the line of sight of the density contrast power spectrum\cite{Hoekstra:2013gua,rachel_2018,Bartelmann:2016dvf}. More specifically, the convergence power spectrum can be written using the parameters from \autoref{eq:powerspecd} as 
+
+\begin{equation}
+    C_\kappa(l) = \frac{9}{4} \left(\frac{H_0}{c}\right)^4\Omega_m^2 \sigma_8^2 \int^{\chi_s}_0 d \chi \left[\frac{G(t)\chi (\chi_s-\chi)^2}{a \chi_s}\right] \mathcal{P}\left(\frac{1}{\chi}\right)
+    \label{eq:convergencespectrum}
+\end{equation}
+
+\autoref{eq:convergencespectrum} shows that the shape of $C_\kappa$ depends on the shape $\mathcal{P}$ of the density contrast power spectrum and thus can be inferred from a measurement of the convergence power spectrum. The growth factor $G$ can also be measured to give us information of on the evolution of structure growth with time. Finally, while we set out to measure the influence of dark energy on structure formation \autoref{eq:convergencespectrum} allows us to additionally constrain the cosmological parameters $\Omega_m$ and $\sigma_8$ up to a degeneracy. The degeneracy is physically interpreted as weak lensing inability to differentiate between low density highly clumped matter and weakly clumped high density matter \cite{general_2013,Bartelmann:2016dvf}. 
+
+\subsection{Cosmic Shear}
+In the previous subsection we showed that if we could measure the convergence power spectrum then we will have achieved our scientific goal. However, you might notice that we never discussed measuring convergence, we only explained shear measurements. The reason is that measuring the convergence is significantly more challenging than measuring the shear. But, it turns out that the convergence power spectrum is identical to shear power spectrum, therefore, our shear data suffices. To prove the statement let us begin by taking the fourier transform of \autoref{eq:kappagamma}, the result is 
+
+\begin{equation}
+    \begin{split}
+        2\hat{\kappa} &= -l^2 \hat{\Phi} \\
+        2 \hat{\gamma}_+ &= -(l_1^2-l_2^2) \hat{\Phi} \\
+        \hat{\gamma}_\times &= -l_1l_2 \hat{\Phi}
+    \end{split}
+    \label{eq:fouriertrans}
+\end{equation}
+
+were the hat indicates the fourier transform of the function. \autoref{eq:fouriertrans} allows us to investigate the magnitude of the functions, we find that
+
+\begin{equation}
+    4|\hat{\gamma}| = |\hat{\Phi}|^2 \left(l_1^2+l_2^2\right)^2 = 4 |\hat{\kappa}|^2
+    \label{eq:fourierspace}
+\end{equation}
+
+The power spectrum of a gaussian field depends exclusively on the magnitude therefore \autoref{eq:fourierspace} shows that the shear power spectrum $C_\gamma$ is the same as the convergence power spectrum $C_\kappa$ \cite{Bartelmann:2016dvf,Hoekstra:2013gua,rachel_2018,general_2013}. The shear power spectrum is simply the fourier transform of the two point correlation function given by 
+
+\begin{equation}
+    \xi_{ij} = \left< \gamma_i \cdot \gamma_j^*\right> 
+    \label{eq:2ptcorrelation}
+\end{equation}
+
+were $i$ and $j$ are redshift bin indices. This two point correlation is the so called "cosmic shear" and is physically the correlation between shears separated by an angular mode on the sky, i.e. if some image distortion by lensing is measured in one particular direction the image distortion nearby should be more similar and thus more correlated than a distortion far away. For a more in depth discussion on cosmic shear please see \cite{lensingbook,general_2013,Hoekstra:2013gua,Bartelmann:2016dvf}.
+
+ \par The above discussion is the extraction procedure for ideal data. Working with real data is more challenging and requires the development of more tools, due to report size constraints we will not be presenting any further analysis techniques.

@@ -1,0 +1,7 @@
+# Ignroe all files with name main.something
+ut-thesis*
+
+# Execpet for the following files
+!.gitignore
+!ut-thesis.tex
+!ut-thesis.pdf
