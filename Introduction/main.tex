@@ -1,24 +1,27 @@
 \chapter{Introduction}
 
-The purpose of this report is to provide a general and pedagogical higher level understanding of SuperBIT. The report structure is as follows; I begin by providing an overview of the instrument and how it operates. I then present the the reader with the theoretical background necessary to understand the forecasted data analysis process as well as appreciate the challenges SuperBIT needs to overcome. Finally, I summaries some of my personal contributions to the instrument in the context of the upcoming September 2019 flight.
+The purpose of this report is to provide a general and pedagogical higher level understanding of SuperBIT. The report structure is as follows; I begin by providing an overview of the instrument and how it operates. I then present the the reader with the theoretical background necessary to understand the forecasted data analysis process as well as appreciate the challenges SuperBIT needs to overcome. Finally, I summaries some of my personal contributions to the instrument in the context of the upcoming September 2019 flight. 
   
 
-\section{Balloon-borne Astronomy}
+\section{Astronomy From the Stratosphere}
+Collecting astronomical data from the stratosphere via a balloon borne instrument presents a plethora of advantages many of which are unique to ballooning. One such advantage is the ability to observe radiation that is not transmitted to ground based observatories, this advantage is highlighted in \autoref{fig:atmos}. Additionally, the resolution of optical telescopes achievable from ground based observatories is limited by the turbulent atmosphere, a balloon borne telescope operates above the atmospheric turbulence and can thus provide diffraction limited resolution. While a space based telescope can similarly address the shortcomings of ground based observations, launching a propellent-based vehicle is 100-1000 times more expensive. Given the relative low cost of ballooning and the short development timescale of balloon borne instruments, ballooning uniquely provides the opportunity of an iterative development process relaying on multiple test flights to ensure smooth scientific operation. The instrument of interest in this report namely, SuperBIT is a balloon borne imaging telescope designed to take utilize the advantages listed above.
 
 \begin{figure}
     \begin{small}
         \begin{center}
             \includegraphics[width=0.95\textwidth]{Introduction/figs/atmosphere.jpg}
         \end{center}
-        \caption{Transmission of the atmosphere vs wavelength at sea level (green), Mauna Kea (brown), and balloon float altitude (blue). }
+        \caption{Transmission of the atmosphere vs wavelength at sea level (green), Mauna Kea (brown), and balloon float altitude (blue). It is clear that a balloon borne optical telescope provides a significant increase in exposure in the blue and near UV frequency range.}
         \label{fig:atmos}
     \end{small}
 \end{figure}
 
 
 \section{Super-pressure Balloon-borne Imaging Telescope (SuperBIT)}
-The point of super bit is t be able to provide diffraction limited observations in the near uv and optical. The diffraction limit of the bit sciecne camera is 0.25 arcseconds resolution therefore the stability of the system must be 2 order mags less which leaves us with a goal of 20 milli arcsecond stability this is achieved using two systems. first the gondola which gives a stability of 0.7" and then fgs in the optics that provides further stabliztaion by tip tilt the 100marcsecond. Both systems described in more detail below.
-\subsection{The Gondola}
+SuperBIT provides near diffraction limited wide-field imaging from the stratosphere in the near UV and optical frequency range.  
+
+The point of super bit is t be able to provide diffraction limited observations in the near uv and optical. The diffraction limit of the bit science camera is 0.25 arcseconds resolution therefore the stability of the system must be 2 order mags less which leaves us with a goal of 20 milliarcsecond stability this is achieved using two systems. first the gondola which gives a stability of 0.7" and then fgs in the optics that provides further stabilization by tip tilt the 100 marcsecond. Both systems described in more detail below.
+
 \begin{figure}
     \begin{small}
         \begin{center}
@@ -30,7 +33,6 @@ The point of super bit is t be able to provide diffraction limited observations 
 \end{figure}
 
 
-\subsection{The Optics}
 
 \begin{figure}
     \begin{small}
@@ -41,4 +43,8 @@ The point of super bit is t be able to provide diffraction limited observations 
         \label{fig:optics}
     \end{small}
 \end{figure}
+
+\par
+For a more detailed description of the instrument please consult group alumni theses. For details on the electrical distribution systems and
+superBIT mechatronics please see John Hartley's PhD thesis, for the mechanical structure see Steven Li’s Engineering Masters Thesis, for a detailed discussion of the controls system and software see Javier Romualdez’s PhD Thesis, for a detailed look at the star cameras system see Matthew Galloway’s PhD Thesis, and for details of the thermal control system see Susan Redmond’s Engineering Masters Theses.
 
