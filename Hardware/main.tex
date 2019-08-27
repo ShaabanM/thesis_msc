@@ -4,8 +4,7 @@ Before SuperBIT can can collect scientific data it must fly! In this section I g
 
 
 \section{Computer \& Electronic Upgrades}
-Talk about MCC replacing freeform with Mesa fpga and what mesa does. 
-Talk about IFC replacing the computer with new one, removing the serial and going with USB instead and putting in mesa and programming it.
+A full schematic of the bit electronics and computer system can be found in \autoref{fig:electronics}. Due to the complexity of the system it will not be described in detail, I will focus exclusively on the changes done for the 2019 flight. The first electronic project was updating the Main Control Computer (MCC), a MESA FPGA 4i69 board was added with a RS422 daughter board to read out the optical gyroscopes and the absolute encoders providing position of the gondola frames. The next change was done to the Inner Frame Computer (IFC), the actual cpu card was switched to a multi core lower power version. Additionally, similar to the MCC a MESA FPGA 4969 board was added to read out the quadrature encoders for the position of the telescopes secondary mirror. A serial card was removed and replaced by a USB hub for serial communications. Finally, a new Focal Plane Computer (FPC) needed to be built from scratch. The computer was built as an identical clone of the first FPC. 
 
 \begin{figure}
     \begin{small}
@@ -35,10 +34,10 @@ For a ULDB flight there is a chance that SuperBIT will land in the ocean and thu
 
 
 \section{Secondary Motors}
-characterize them from ajays notes. and from my code work
+The SuperBIT optical system is partially controlled by altering the position of the secondary mirror using three actuators providing tip/tilt/focus motion. The actuators needed to be understood and then have control software written for them. In order to understand the actuators we ran some tests and found the following features. A quadrature encoder is used to feedback position with 8000 encoder ticks per stepper motor revolution. A hall sensor is triggered as a limit switch to enable encoder calibration as well as indicate when the motor has reached min position. After characterizing the behavior of the motors VHDL code was written in order to enable the MESA FPGA in the IFC to interpretate raw encoder data, C wrapper was written to read the fpga write out from the PCI address and have the data available for control feedback.
 
 \section{Baffle Mounting Device}
-why do we need it what is mount on it why did it need sorbathane and thermal calcs.
+The star cameras and gyroscopes needed to mount onto the telescope baffle, as a result a mechanism to provide flat mounting surface on the telescope needed to be developed. The primary concern in the design process is to ensure that the mechanism is sufficiently stiff such that no vibrational modes are induced in the telescope and thus increasing the uncertainty in our pointing. We used sorbathane to dampen any vibrations as well as carbon fibre hex to ensure light and stiff material is used. The design can be seen in \autoref{fig:feet}.
 
 \begin{figure}
     \begin{small}
@@ -46,13 +45,13 @@ why do we need it what is mount on it why did it need sorbathane and thermal cal
             \includegraphics[width=0.95\textwidth]{Hardware/figs/baffle_mount.png}
         \end{center}
         \caption{}
-        \label{fig:}
+        \label{fig:feet}
     \end{small}
 \end{figure}
 
 
 \section{Battery Boxes}
-why do we need them what do they do and how do they operate.
+During previous test flights it was empirically found that keeping BIT batteries at the functional temperature used a significant percentage of BIT's total power budget. As a result a new thermal insulation strategy was needed. 
 
 \begin{figure}
     \begin{small}
@@ -85,8 +84,7 @@ why do we need them what do they do and how do they operate.
     \end{small}
 \end{figure}
 
-
-
 \section{Inner Frame Design}
+A complete redesign of the BIT electronics layout on the inner frame was completed in order to optimize for space and cable use with respect to the new telescope.
 
 
