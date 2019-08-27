@@ -18,7 +18,8 @@ Collecting astronomical data from the stratosphere via a balloon borne instrumen
 
 
 \section{Super-pressure Balloon-borne Imaging Telescope (SuperBIT)}
-SuperBIT is an optical to near UV balloon borne half meter telescope providing diffraction-limited 0.25 arcsecond resolution imaging over a 0.4 degree filed of view with sensitivities exceeding 24th magnitude in 300 seconds of integration. SuperBIT is designed for an ultra-long duration balloon (ULDB) 100 day flight with the immediate science goal of providing precision weak and strong lensing mass measurements for more than 150 clusters. Diffraction limited resolution requires stable pointing, in the case of SuperBIT the goal is to point with a stability of 20 milliarc-seconds. This pointing in achieved in two distinct stages, the first stage is stabilizing the gondola (seen in \autoref{fig:bit}) in three axes with a peak-to-peak accuracy of better than an arc-second in the presence of external motions at the several arc-minute level. Superbit is designed to have three This stabilization is achieved using stepper motors correcting for the motions in each eu the outer frame corrects for  using data from three axes  in a feedback loop with three axes gyroscopes and two axes star camera system
+SuperBIT is an optical to near UV balloon borne half meter telescope providing diffraction-limited 0.25 arcsecond resolution imaging over a 0.4 degree filed of view with sensitivities exceeding 24th magnitude in 300 seconds of integration. SuperBIT is designed for an ultra-long duration balloon (ULDB) 100 day flight with the immediate science goal of providing precision weak and strong lensing mass measurements for more than 150 clusters. Diffraction limited resolution requires stable pointing, in the case of SuperBIT the goal is to point with a stability of 20 milliarc-seconds. This pointing in achieved in two distinct stages, the first stage is stabilizing the gondola (seen in \autoref{fig:bit}) in three axes with a peak-to-peak accuracy of better than an arc-second in the presence of external motions at the several arc-minute level. This stabilization is achieved using stepper motors correcting for the motions in each euler angle by moving superBIT's three frames; the outer frame moving in yaw, the middle frame moving in roll, and the inner frame moving in pitch. Gyroscopes and a two star camera system are used as the motion feedback for the motor's correction. The second stage is achieving sub-arcsecond pointing via the fine guidance optical system (seen in \autoref{fig:optics}). The optical system uses a 0.5 meter class modified dall kirkham telescope for light collection that is then fed into an optics box. In the optics box part of the field of view is picked off by a pick off mirror and fed to a high speed camera, the high speed camera uses the position of a bright star to provide information on the sub arcsecond motion of the gondola that is corrected for by a tip tilt mirror. This tip/tilt correction results in sub arc-second stabilization from the perspective of the science camera located at the end of the optical path. 
+
 
 \begin{figure}
     \begin{small}
@@ -29,8 +30,6 @@ SuperBIT is an optical to near UV balloon borne half meter telescope providing d
         \label{fig:bit}
     \end{small}
 \end{figure}
-
-The second stage is achieving sub-arcsecond pointing via the fine guidance optical system (seen in \autoref{fig:optics}). 
 
 \begin{figure}
     \begin{small}
